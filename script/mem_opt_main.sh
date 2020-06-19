@@ -108,8 +108,8 @@ save_panel()
 }
 
 # copy of common\system.prop
-setprop ro.vendor.qti.sys.fw.bg_apps_limit 600
-setprop ro.vendor.qti.sys.fw.bservice_limit 60
+setprop ro.vendor.qti.sys.fw.bg_apps_limit 600 2>/dev/null
+setprop ro.vendor.qti.sys.fw.bservice_limit 60 2>/dev/null
 # disable memplus prefetcher which ram-boost relying on, use traditional swapping
 setprop persist.vendor.sys.memplus.enable "false"
 lock_val "0" /sys/module/memplus_core/parameters/memory_plus_enabled

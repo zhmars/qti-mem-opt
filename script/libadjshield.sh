@@ -49,7 +49,7 @@ adjshield_start()
 
 adjshield_stop()
 {
-    killall "$ADJSHIELD_NAME"
+    killall "$ADJSHIELD_NAME" 2>/dev/null
 }
 
 # return:status

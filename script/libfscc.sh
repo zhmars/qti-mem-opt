@@ -117,7 +117,9 @@ fscc_add_app_ime()
 # $1:package_name
 fscc_add_apex_lib()
 {
-    fscc_add_obj "$(find /apex -name "$1" | head -n 1)"
+    if [ -d "/apex" ]; then
+        fscc_add_obj "$(find /apex -name "$1" | head -n 1)"
+    fi
 }
 
 # after appending fscc_file_list
@@ -129,7 +131,7 @@ fscc_start()
 
 fscc_stop()
 {
-    killall "$FSCC_NAME"
+    killall "$FSCC_NAME" 2>/dev/null
 }
 
 # return:status
